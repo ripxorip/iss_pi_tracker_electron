@@ -1,0 +1,14 @@
+[Unit]
+Description=ISS Pi Tracker Electron
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/dev/iss_pi_tracker_electron
+Environment=DISPLAY=:0
+ExecStart=/usr/local/bin/npm test
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
